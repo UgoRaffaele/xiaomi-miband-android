@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/title_preferences_main" >
+
+        <EditTextPreference
+            android:key="name"
+            android:title="@string/title_name_preference"
+            android:summary="@string/summary_name_preference"
+            android:dialogTitle="@string/title_name_preference" />
+
+        <EditTextPreference
+            android:key="height"
+            android:title="@string/title_height_preference"
+            android:summary="@string/summary_height_preference"
+            android:dialogTitle="@string/title_height_preference"
+            android:inputType="number" />
+
+        <ListPreference
+            android:key="sex"
+            android:title="@string/title_sex_preference"
+            android:summary="@string/summary_sex_preference"
+            android:entries="@array/entries_sex_preference"
+            android:entryValues="@array/entries_sex_preference"
+            android:dialogTitle="@string/title_sex_preference" />
+
+        <ListPreference
+            android:key="goal"
+            android:title="@string/title_goal_preference"
+            android:summary="@string/summary_goal_preference"
+            android:entries="@array/entries_goal_preference"
+            android:entryValues="@array/entries_goal_preference"
+            android:dialogTitle="@string/title_goal_preference"  />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_preferences_params" >
+
+        <EditTextPreference
+            android:key="connection_interval"
+            android:title="@string/title_connection_interval_preference"
+            android:enabled="false" />
+
+        <EditTextPreference
+            android:key="advertising_interval"
+            android:title="@string/title_advertising_interval_preference"
+            android:enabled="false" />
+
+        <EditTextPreference
+            android:key="latency"
+            android:title="@string/title_latency_preference"
+            android:enabled="false" />
+
+        <EditTextPreference
+            android:key="timeout"
+            android:title="@string/title_timeout_preference"
+            android:enabled="false" />
+
+        <EditTextPreference
+            android:key="mac_address"
+            android:title="@string/title_mac_address_preference"
+            android:enabled="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_preferences_about" >
+
+        <PreferenceScreen
+            android:key="about"
+            android:title="@string/title_license_preference"
+            android:summary="@string/summary_license_preference">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/action_about_preference" />
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

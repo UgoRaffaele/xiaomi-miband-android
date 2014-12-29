@@ -1,0 +1,9 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/graph_color_primary</item>
+        <item name="android:colorPrimaryDark">@color/graph_color_primary_dark</item>
+        <item name="android:navigationBarColor">@color/graph_color_primary_dark</item>
+    </style>
+
+</resources>

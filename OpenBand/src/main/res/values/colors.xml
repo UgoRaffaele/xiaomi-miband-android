@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="graph_color_primary">#FF6600</color>
+    <color name="graph_color_primary_dark">#E45B00</color>
+
+</resources>

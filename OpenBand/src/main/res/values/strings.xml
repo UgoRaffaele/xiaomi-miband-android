@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OpenBand</string>
+
+    <string name="looking_for_miband">Looking for MiBand</string>
+    <string name="not_found">MiBand not found. Is it in range?</string>
+    <string name="downloading_from_miband">Downloading data</string>
+    <string name="no_le_params">No LE params received yet</string>
+    <string name="no_mac_address">No MAC address received yet</string>
+
+    <string name="enable_ble">Bluetooth is disabled</string>
+    <string name="action_enable_ble">Enable</string>
+
+    <string name="scan_again">Scan again?</string>
+    <string name="action_scan_again">Yes</string>
+
+    <string name="steps">steps</string>
+    <string name="distance">km</string>
+    <string name="battery">battery</string>
+
+    <string name="title_preferences_main">Preferences</string>
+
+    <string name="title_name_preference">Name</string>
+    <string name="summary_name_preference">Your full name</string>
+
+    <string name="title_height_preference">Height</string>
+    <string name="summary_height_preference">Your height in cm</string>
+
+    <string name="title_sex_preference">Gender</string>
+    <string name="summary_sex_preference">Your gender</string>
+
+    <string-array name="entries_sex_preference">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string name="title_goal_preference">Goal</string>
+    <string name="summary_goal_preference">Set your daily goal in steps</string>
+
+    <string-array name="entries_goal_preference">
+        <item>2500</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>10000</item>
+    </string-array>
+
+    <string name="title_preferences_params">Params</string>
+
+    <string name="title_connection_interval_preference">Connection Interval</string>
+    <string name="title_advertising_interval_preference">Advertising Interval</string>
+    <string name="title_latency_preference">Latency</string>
+    <string name="title_timeout_preference">Timeout</string>
+    <string name="title_mac_address_preference">MAC Address</string>
+
+    <string name="title_preferences_about">About</string>
+
+    <string name="title_license_preference">License</string>
+    <string name="summary_license_preference">GNU GPL v3</string>
+
+    <string name="action_about_preference">http://www.ugopiemontese.eu/portfolio-item/openband/</string>
+
+</resources>

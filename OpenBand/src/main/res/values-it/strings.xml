@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OpenBand</string>
+
+    <string name="looking_for_miband">Ricerca della MiBand</string>
+    <string name="not_found">MiBand non trovata, avvicinala e riprova.</string>
+    <string name="downloading_from_miband">Scarico i dati</string>
+    <string name="no_le_params">Parametri LE non ancora ricevuti</string>
+    <string name="no_mac_address">MAC address non ancora ricevuto</string>
+
+    <string name="enable_ble">Il Bluetooth è disabilitato</string>
+    <string name="action_enable_ble">Abilita</string>
+
+    <string name="scan_again">Riprovare la scansione?</string>
+    <string name="action_scan_again">Si</string>
+
+    <string name="steps">passi</string>
+    <string name="distance">km</string>
+    <string name="battery">batteria</string>
+
+    <string name="title_preferences_main">Preferenze</string>
+
+    <string name="title_name_preference">Nome</string>
+    <string name="summary_name_preference">Il tuo nome o nickname</string>
+
+    <string name="title_height_preference">Altezza</string>
+    <string name="summary_height_preference">La tua altezza in cm</string>
+
+    <string name="title_sex_preference">Sesso</string>
+    <string name="summary_sex_preference">Uomo o donna?</string>
+
+    <string-array name="entries_sex_preference">
+        <item>Uomo</item>
+        <item>Donna</item>
+    </string-array>
+
+    <string name="title_goal_preference">Obiettivo</string>
+    <string name="summary_goal_preference">Il tuo obiettivo quotidiano in passi</string>
+
+    <string-array name="entries_goal_preference">
+        <item>2500</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>10000</item>
+    </string-array>
+
+    <string name="title_preferences_params">Parametri</string>
+
+    <string name="title_connection_interval_preference">Intervallo di Connessione</string>
+    <string name="title_advertising_interval_preference">Intervallo di Advertising</string>
+    <string name="title_latency_preference">Latenza</string>
+    <string name="title_timeout_preference">Timeout</string>
+    <string name="title_mac_address_preference">MAC Address</string>
+
+    <string name="title_preferences_about">Informazioni</string>
+
+    <string name="title_license_preference">Licenza</string>
+    <string name="summary_license_preference">GNU GPL v3</string>
+
+    <string name="action_about_preference">http://www.ugopiemontese.eu</string>
+
+</resources>
