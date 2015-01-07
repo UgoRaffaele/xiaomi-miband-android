@@ -63,6 +63,11 @@
             android:title="@string/title_mac_address_preference"
             android:enabled="false" />
 
+        <EditTextPreference
+            android:key="firmware"
+            android:title="@string/title_firmware_preference"
+            android:enabled="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

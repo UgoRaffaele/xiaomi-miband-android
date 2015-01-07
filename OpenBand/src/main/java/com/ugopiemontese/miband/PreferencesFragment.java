@@ -16,6 +16,7 @@ public class PreferencesFragment extends ActionBarActivity {
 
     private LeParams params;
     private String mac;
+    private String firmware;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +24,13 @@ public class PreferencesFragment extends ActionBarActivity {
 
         params = (LeParams) getIntent().getParcelableExtra("params");
         mac = (String) getIntent().getStringExtra("mac_address");
+        firmware = getIntent().getStringExtra("firmware");
 
         setContentView(R.layout.activity_mi_preferences);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getFragmentManager().beginTransaction().replace(R.id.content, new PrefsFragment(params, mac)).commit();
+        getFragmentManager().beginTransaction().replace(R.id.content, new PrefsFragment(params, mac, firmware)).commit();
     }
 
     @Override
@@ -45,10 +47,12 @@ public class PreferencesFragment extends ActionBarActivity {
 
         private LeParams mParams;
         private String mMacAddress;
+        private String mFirmware;
 
-        public PrefsFragment(LeParams params, String mac) {
+        public PrefsFragment(LeParams params, String mac, String firmware) {
             mParams = params;
             mMacAddress = mac;
+            mFirmware = firmware;
         }
 
         @Override
@@ -79,6 +83,9 @@ public class PreferencesFragment extends ActionBarActivity {
             Preference mac_address = findPreference("mac_address");
             editor.putString("mac_address", (String) mMacAddress);
 
+            Preference firmware = findPreference("firmware");
+            editor.putString("firmware", (String) mFirmware);
+
             editor.commit();
 
             name.setSummary(sharedPreferences.getString("name", getResources().getString(R.string.summary_name_preference)));
@@ -91,6 +98,7 @@ public class PreferencesFragment extends ActionBarActivity {
             latency.setSummary(sharedPreferences.getString("latency", ""));
             timeout.setSummary(sharedPreferences.getString("timeout", ""));
             mac_address.setSummary(sharedPreferences.getString("mac_address", ""));
+			firmware.setSummary(sharedPreferences.getString("firmware", ""));
 
         }
 

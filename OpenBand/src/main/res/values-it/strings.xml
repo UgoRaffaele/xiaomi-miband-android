@@ -52,6 +52,7 @@
     <string name="title_latency_preference">Latenza</string>
     <string name="title_timeout_preference">Timeout</string>
     <string name="title_mac_address_preference">MAC Address</string>
+    <string name="title_firmware_preference">Firmware</string>
 
     <string name="title_preferences_about">Informazioni</string>
 

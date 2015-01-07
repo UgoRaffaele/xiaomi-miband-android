@@ -1,6 +1,7 @@
 package com.ugopiemontese.miband;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Observable;
 import java.util.Observer;
@@ -49,8 +50,12 @@ public class MiOverviewActivity extends ActionBarActivity implements Observer {
 
 	private static final UUID UUID_MILI_SERVICE = UUID
 			.fromString("0000fee0-0000-1000-8000-00805f9b34fb");
-	private static final UUID UUID_CHAR_pair = UUID
+	private static final UUID UUID_CHAR_PAIR = UUID
 			.fromString("0000ff0f-0000-1000-8000-00805f9b34fb");
+    private static final UUID UUID_CHAR_INFO = UUID
+            .fromString("0000ff01-0000-1000-8000-00805f9b34fb");
+    private static final UUID UUID_CHAR_DEVICE_NAME = UUID
+            .fromString("0000ff02-0000-1000-8000-00805f9b34fb");
 	private static final UUID UUID_CHAR_CONTROL_POINT = UUID
 			.fromString("0000ff05-0000-1000-8000-00805f9b34fb");
 	private static final UUID UUID_CHAR_REALTIME_STEPS = UUID
@@ -59,8 +64,6 @@ public class MiOverviewActivity extends ActionBarActivity implements Observer {
 			.fromString("0000ff07-0000-1000-8000-00805f9b34fb");
 	private static final UUID UUID_CHAR_LE_PARAMS = UUID
 			.fromString("0000ff09-0000-1000-8000-00805f9b34fb");
-	private static final UUID UUID_CHAR_DEVICE_NAME = UUID
-			.fromString("0000ff02-0000-1000-8000-00805f9b34fb");
 	private static final UUID UUID_CHAR_BATTERY = UUID
 			.fromString("0000ff0c-0000-1000-8000-00805f9b34fb");
 
@@ -201,6 +204,7 @@ public class MiOverviewActivity extends ActionBarActivity implements Observer {
                 Intent intent = new Intent(getApplicationContext(), PreferencesFragment.class);
                 intent.putExtra("params", mMiBand.mLeParams);
                 intent.putExtra("mac_address", mMiBand.mBTAddress);
+                intent.putExtra("firmware", mMiBand.mFirmware);
                 startActivity(intent);
                 break;
 		}
@@ -208,7 +212,7 @@ public class MiOverviewActivity extends ActionBarActivity implements Observer {
 	}
 
 	private void pair() {
-		BluetoothGattCharacteristic chrt = getMiliService().getCharacteristic(UUID_CHAR_pair);
+		BluetoothGattCharacteristic chrt = getMiliService().getCharacteristic(UUID_CHAR_PAIR);
 		chrt.setValue(new byte[] { 2 });
 		mGatt.writeCharacteristic(chrt);
 	}
@@ -259,6 +263,9 @@ public class MiOverviewActivity extends ActionBarActivity implements Observer {
                 } else if (characteristic.getUuid().equals(UUID_CHAR_LE_PARAMS)) {
                     LeParams params = LeParams.fromByte(b);
                     mMiBand.setLeParams(params);
+                } else if (characteristic.getUuid().equals(UUID_CHAR_INFO)) {
+                    byte [] version = Arrays.copyOfRange(b, b.length - 4, b.length);
+                    mMiBand.setFirmware(version);
                 }
                 state++;
             }
@@ -274,6 +281,9 @@ public class MiOverviewActivity extends ActionBarActivity implements Observer {
                     break;
                 case 3:
                     request(UUID_CHAR_LE_PARAMS);
+                    break;
+                case 4:
+                    request(UUID_CHAR_INFO);
                     break;
 			}
 
