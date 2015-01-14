@@ -1,16 +1,16 @@
-package com.ugopiemontese.miband;
+package com.ugopiemontese.openband;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.preference.Preference;
 import android.content.SharedPreferences;
 import android.preference.PreferenceFragment;
 
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.MenuItem;
 
-import com.ugopiemontese.miband.model.LeParams;
+import com.ugopiemontese.openband.model.LeParams;
 
 public class PreferencesFragment extends ActionBarActivity {
 
@@ -22,8 +22,8 @@ public class PreferencesFragment extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        params = (LeParams) getIntent().getParcelableExtra("params");
-        mac = (String) getIntent().getStringExtra("mac_address");
+        params = getIntent().getParcelableExtra("params");
+        mac = getIntent().getStringExtra("mac_address");
         firmware = getIntent().getStringExtra("firmware");
 
         setContentView(R.layout.activity_mi_preferences);
@@ -65,8 +65,9 @@ public class PreferencesFragment extends ActionBarActivity {
 
             Preference name = findPreference("name");
             Preference height = findPreference("height");
-            Preference goal = findPreference("goal");
+            Preference weight = findPreference("weight");
             Preference sex = findPreference("sex");
+            Preference goal = findPreference("goal");
 
             Preference connection_interval = findPreference("connection_interval");
             editor.putString("connection_interval", String.format("%s ms", mParams.connInt));
@@ -90,15 +91,16 @@ public class PreferencesFragment extends ActionBarActivity {
 
             name.setSummary(sharedPreferences.getString("name", getResources().getString(R.string.summary_name_preference)));
             height.setSummary(sharedPreferences.getString("height", getResources().getString(R.string.summary_height_preference)));
-            goal.setSummary(sharedPreferences.getString("goal", getResources().getString(R.string.summary_goal_preference)));
+            weight.setSummary(sharedPreferences.getString("weight", getResources().getString(R.string.summary_weight_preference)));
             sex.setSummary(sharedPreferences.getString("sex", getResources().getString(R.string.summary_sex_preference)));
+            goal.setSummary(sharedPreferences.getString("goal", getResources().getString(R.string.summary_goal_preference)));
 
             connection_interval.setSummary(sharedPreferences.getString("connection_interval", ""));
             advertising_interval.setSummary(sharedPreferences.getString("advertising_interval", ""));
             latency.setSummary(sharedPreferences.getString("latency", ""));
             timeout.setSummary(sharedPreferences.getString("timeout", ""));
             mac_address.setSummary(sharedPreferences.getString("mac_address", ""));
-			firmware.setSummary(sharedPreferences.getString("firmware", ""));
+            firmware.setSummary(sharedPreferences.getString("firmware", ""));
 
         }
 
@@ -117,8 +119,10 @@ public class PreferencesFragment extends ActionBarActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            Preference pref = findPreference(key);
-            pref.setSummary(sharedPreferences.getString(key, ""));
+            if (!key.equals("notifications")) {
+                Preference pref = findPreference(key);
+                pref.setSummary(sharedPreferences.getString(key, ""));
+            }
         }
 
     }

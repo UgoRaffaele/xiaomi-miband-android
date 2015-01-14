@@ -3,6 +3,7 @@
 
     <string name="app_name">OpenBand</string>
 
+    <string name="ble_not_supported">BLE is not supported</string>
     <string name="looking_for_miband">Looking for MiBand</string>
     <string name="not_found">MiBand not found. Is it in range?</string>
     <string name="downloading_from_miband">Downloading data</string>
@@ -27,6 +28,9 @@
     <string name="title_height_preference">Height</string>
     <string name="summary_height_preference">Your height in cm</string>
 
+    <string name="title_weight_preference">Weight</string>
+    <string name="summary_weight_preference">Your weight in kg</string>
+
     <string name="title_sex_preference">Gender</string>
     <string name="summary_sex_preference">Your gender</string>
 
@@ -44,6 +48,12 @@
         <item>7500</item>
         <item>10000</item>
     </string-array>
+
+    <string name="title_preferences_notifications">Notifications</string>
+
+    <string name="title_notifications_preference">Coming soon!</string>
+    <string name="summary_notifications_preference_enabled">Enabled</string>
+    <string name="summary_notifications_preference_disabled">Disabled</string>
 
     <string name="title_preferences_params">Params</string>
 

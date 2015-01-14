@@ -2,9 +2,10 @@ OpenBand for Android
 ====================
 
 Released under the terms of GNU GPL v3 License by Ugo Raffaele Piemontese.
-Based on the work made by Paul Gavrikov.
+Based on the work made by Paul Gavrikov and Oscar Aceña.
 
 [xiaomi-miband-android]: https://github.com/paulgavrikov/xiaomi-miband-android
+[mibanda]: https://bitbucket.org/OscarAcena/mibanda
 
 
 MPAndroidChart - Copyright (c) 2014 Philipp Jahoda

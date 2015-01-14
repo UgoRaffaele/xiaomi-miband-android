@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="@string/title_preferences_main" >
+        android:title="@string/title_preferences_main">
 
         <EditTextPreference
             android:key="name"
@@ -15,6 +15,13 @@
             android:title="@string/title_height_preference"
             android:summary="@string/summary_height_preference"
             android:dialogTitle="@string/title_height_preference"
+            android:inputType="number" />
+
+        <EditTextPreference
+            android:key="weight"
+            android:title="@string/title_weight_preference"
+            android:summary="@string/summary_weight_preference"
+            android:dialogTitle="@string/title_weight_preference"
             android:inputType="number" />
 
         <ListPreference
@@ -31,12 +38,25 @@
             android:summary="@string/summary_goal_preference"
             android:entries="@array/entries_goal_preference"
             android:entryValues="@array/entries_goal_preference"
-            android:dialogTitle="@string/title_goal_preference"  />
+            android:dialogTitle="@string/title_goal_preference" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/title_preferences_params" >
+        android:title="@string/title_preferences_notifications">
+
+        <CheckBoxPreference
+            android:key="notifications"
+            android:title="@string/title_notifications_preference"
+            android:summaryOn="@string/summary_notifications_preference_enabled"
+            android:summaryOff="@string/summary_notifications_preference_disabled"
+            android:defaultValue="false"
+            android:enabled="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/title_preferences_params">
 
         <EditTextPreference
             android:key="connection_interval"
@@ -71,7 +91,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/title_preferences_about" >
+        android:title="@string/title_preferences_about">
 
         <PreferenceScreen
             android:key="about"

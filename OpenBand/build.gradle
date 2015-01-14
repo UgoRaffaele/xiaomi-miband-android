@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.ugopiemontese.miband"
+        applicationId "com.ugopiemontese.openband"
         minSdkVersion 18
         targetSdkVersion 21
     }

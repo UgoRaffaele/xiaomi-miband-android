@@ -1,4 +1,4 @@
-package com.ugopiemontese.miband.helper;
+package com.ugopiemontese.openband.helper;
 
 import android.content.Context;
 import android.view.GestureDetector;

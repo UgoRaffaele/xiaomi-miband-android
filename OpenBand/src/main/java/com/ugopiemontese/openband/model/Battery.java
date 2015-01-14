@@ -1,4 +1,4 @@
-package com.ugopiemontese.miband.model;
+package com.ugopiemontese.openband.model;
 
 import java.util.Calendar;
 
