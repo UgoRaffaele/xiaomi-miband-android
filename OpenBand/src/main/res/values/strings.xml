@@ -51,7 +51,7 @@
 
     <string name="title_preferences_notifications">Notifications</string>
 
-    <string name="title_notifications_preference">Coming soon!</string>
+    <string name="title_notifications_preference">Notifications</string>
     <string name="summary_notifications_preference_enabled">Enabled</string>
     <string name="summary_notifications_preference_disabled">Disabled</string>
 

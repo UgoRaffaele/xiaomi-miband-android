@@ -50,8 +50,7 @@
             android:title="@string/title_notifications_preference"
             android:summaryOn="@string/summary_notifications_preference_enabled"
             android:summaryOff="@string/summary_notifications_preference_disabled"
-            android:defaultValue="false"
-            android:enabled="false" />
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
